@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+MOVIE DETAILS
+{% endblock %}
+{% block content %}
+<div class="container mt-2" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="{{m1.image.url}}" height="500px" width="100%" ><br>
+        </div>
+        <div class="col-sm-6">
+            <h3>{{m1.name}}</h3>
+            <p>{{m1.desc}}</p>
+            <h6>{{m1.year}}</h6>
+            <a type="submit" href="{% url 'movies:edit' m1.id %}" class="btn btn-warning">Edit</a>
+            <a type="submit" href="{% url 'movies:delete' m1.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
